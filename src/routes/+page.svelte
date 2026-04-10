@@ -5,10 +5,11 @@
 
     // Import all images from lib/images
     const imageModules = import.meta.glob("/src/content/images/*.webp", {
-        eager: true,
-        as: "url",
-    });
-    const images = Object.values(imageModules);
+    eager: true,
+    query: "?url",
+    import: "default",
+});
+const images = Object.values(imageModules) as string[];
 
     // Import all markdown files to display latest blog posts
     const postFiles = import.meta.glob("/src/content/posts/*.md", {
