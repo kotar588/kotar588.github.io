@@ -152,15 +152,6 @@
                         on:click={closeMenu}>Publications</a
                     >
                 </li>
-                <li>
-                    <a
-                        href="/softwares"
-                        class:active={$page.url.pathname.startsWith(
-                            "/softwares",
-                        )}
-                        on:click={closeMenu}>Softwares</a
-                    >
-                </li>
             </ul>
         </nav>
     </div>
