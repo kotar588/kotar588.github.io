@@ -6,7 +6,7 @@ export function entries() {
     const modules = import.meta.glob('/src/content/posts/*.md');
 
     return Object.keys(modules).map((path) => ({
-        slug: path.split('/').pop().replace('.md', '')
+        slug: (path.split('/').pop() || '').replace('.md', '')
     }));
 }
 
@@ -76,7 +76,7 @@ export async function load({ params }) {
         const post = /** @type {{ default: any, metadata: Record<string, any> }} */ (await componentModules[path]());
 
         // Extract headings from raw markdown
-        const headings = extractHeadings(rawContent);
+        const headings = extractHeadings(/** @type {string} */ (rawContent));
 
         const { title, date, tags, summary, ...rest } = post.metadata;
         return {
