@@ -1,0 +1,100 @@
+{
+  "about": "I am a top 1% Gaussian proccess tuner, finding something beyond normality.",
+  "education": [
+    {
+      "institution": "Nara Institute of Science and Technology",
+      "degree": "PhD Student",
+      "period": "2026--Present",
+      "lab": "Mathematical Informatics Laboratory"
+    },
+    {
+      "institution": "Nara Institute of Science and Technology",
+      "degree": "MEng in Information Science",
+      "period": "2024--2026",
+      "lab": "Mathematical Informatics Laboratory"
+    },
+    {
+      "institution": "Open University",
+      "degree": "BSc in Mathematics",
+      "period": "2020--2023"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Research Participant",
+      "institution": "JST CREST: Unraveling Canine Supersensing Through Social Signals",
+      "period": "2025--2026"
+    },
+    {
+      "role": "Visiting Student Researcher",
+      "institution": "Chair of Information-oriented Control, Technical University of Munich",
+      "period": "2025--2026"
+    },
+    {
+      "role": "Research Assistant",
+      "institution": "Nara Institute of Science and Technology",
+      "period": "2025--Present"
+    },
+    {
+      "role": "Research Assistant",
+      "institution": "Graduate School of Medicine, Kyoto University",
+      "period": "2023--Present"
+    },
+    {
+      "role": "Data Scientist (Intern / Part-time)",
+      "institution": "ScrumSign, Inc.",
+      "period": "2022--Present"
+    }
+  ],
+  "research_interests": [
+    {
+      "category": "Probabilistic ML",
+      "topics": [
+        "Approximate Bayesian inference",
+        "Bayesian Hierarchical Modeling",
+        "Gaussian Process"
+      ]
+    },
+    {
+      "category": "Optimization",
+      "topics": [
+        "Model-Based Black-Box Optimization",
+        "Constrained optimization"
+      ]
+    },
+    {
+      "category": "Trustworthy AI",
+      "topics": [
+        "Theoretical Guarantee on Algorithms (regret analysis on bandits)",
+        "Constraint Learning"
+      ]
+    }
+  ],
+  "publications": {
+    "preprints_under_review": "Load from references.bib",
+    "journal_articles": "Load from references.bib",
+    "international_conferences": "Load from references.bib",
+    "domestic_conferences": "Load from references.bib",
+    "academic_presentations": "Load from references.bib"
+  },
+  "languages": [
+    {
+      "language": "Japanese",
+      "level": "Native"
+    },
+    {
+      "language": "English",
+      "level": "Fluent"
+    },
+    {
+      "language": "German",
+      "level": "Basic"
+    }
+  ],
+  "links": {
+    "email": "onoue[at]duck.com",
+    "github": "https://github.com/k-onoue",
+    "google_scholar": "https://scholar.google.com/citations?user=QQ4sWP4AAAAJ&hl=en",
+    "orcid": "https://orcid.org/0009-0007-3249-6572"
+  }
+}
