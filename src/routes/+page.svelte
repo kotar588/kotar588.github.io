@@ -3,13 +3,14 @@
     import bioData from "$content/bio.json";
     import newsData from "$content/news.json";
 
-    // Import all images from lib/images
+    // Import all images from content/images
     const imageModules = import.meta.glob("/src/content/images/*.webp", {
-    eager: true,
-    query: "?url",
-    import: "default",
-});
-const images = Object.values(imageModules) as string[];
+        eager: true,
+        query: "?url",
+        import: "default",
+    });
+    const images = Object.values(imageModules) as string[];
+    const hasImages = images.length > 0;
 
     // Import all markdown files to display latest blog posts
     const postFiles = import.meta.glob("/src/content/posts/*.md", {
@@ -95,7 +96,7 @@ const images = Object.values(imageModules) as string[];
     let imageQueue: number[] = [];
     let currentImageIndex = 0;
     let isHovering = false;
-    let intervalId: number;
+    let intervalId: ReturnType<typeof setInterval> | undefined;
 
     // Fisher-Yates shuffle algorithm
     function shuffleArray(array: number[]): number[] {
@@ -109,14 +110,18 @@ const images = Object.values(imageModules) as string[];
 
     // Initialize the queue with shuffled indices
     function initializeQueue() {
+        if (!hasImages) return;
+
         const indices = Array.from({ length: images.length }, (_, i) => i);
         imageQueue = shuffleArray(indices);
-        currentImageIndex = imageQueue[0];
+        currentImageIndex = imageQueue[0] ?? 0;
     }
 
     // Get next image in queue
     function getNextImage() {
-        imageQueue.shift(); // Remove current image from queue
+        if (!hasImages) return;
+
+        imageQueue.shift();
 
         // If queue is empty, reshuffle and start over
         if (imageQueue.length === 0) {
@@ -124,17 +129,16 @@ const images = Object.values(imageModules) as string[];
             imageQueue = shuffleArray(indices);
         }
 
-        currentImageIndex = imageQueue[0];
+        currentImageIndex = imageQueue[0] ?? 0;
     }
 
     // Get previous image
     function getPreviousImage() {
-        // Add current image back to the front of queue
+        if (!hasImages) return;
+
         imageQueue.unshift(currentImageIndex);
 
-        // Find the previous image index
-        const currentPos = images.indexOf(images[currentImageIndex]);
-        const previousPos = (currentPos - 1 + images.length) % images.length;
+        const previousPos = (currentImageIndex - 1 + images.length) % images.length;
 
         currentImageIndex = previousPos;
         imageQueue[0] = previousPos;
@@ -152,19 +156,19 @@ const images = Object.values(imageModules) as string[];
 
     // Auto-transition every 5 seconds (pauses on hover)
     onMount(() => {
+        if (!hasImages) return;
+
         initializeQueue();
 
-        const startInterval = () => {
-            return setInterval(() => {
-                if (!isHovering) {
-                    getNextImage();
-                }
-            }, 5000);
+        intervalId = setInterval(() => {
+            if (!isHovering) {
+                getNextImage();
+            }
+        }, 5000);
+
+        return () => {
+            if (intervalId) clearInterval(intervalId);
         };
-
-        intervalId = startInterval();
-
-        return () => clearInterval(intervalId);
     });
 
     function handleMouseEnter() {
