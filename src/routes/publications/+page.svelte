@@ -123,7 +123,7 @@
 </script>
 
 <svelte:head>
-    <title>Publications - Keisuke Onoue</title>
+    <title>Publications - Kotaro Hironaka</title>
 </svelte:head>
 
 <!-- Journal Articles -->
