@@ -72,7 +72,7 @@
 </script>
 
 <svelte:head>
-    <title>Posts - Keisuke Onoue</title>
+    <title>Posts - Kotaro Hironaka</title>
 </svelte:head>
 
 <section id="blog-all">
