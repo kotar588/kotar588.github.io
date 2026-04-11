@@ -20,7 +20,6 @@
     }
 
     interface Categories {
-        preprints: BibEntry[];
         journals: BibEntry[];
         international: BibEntry[];
         domestic: BibEntry[];
@@ -59,7 +58,6 @@
 
     function categorizeEntries(entries: BibEntry[]): Categories {
         const categories: Categories = {
-            preprints: [],
             journals: [],
             international: [],
             domestic: [],
@@ -72,12 +70,7 @@
                 .split(",")
                 .map((k: string) => k.trim());
 
-            if (
-                keywords.includes("preprints") ||
-                keywords.includes("under-review")
-            ) {
-                categories.preprints.push(entry);
-            } else if (keywords.includes("journal")) {
+            if (keywords.includes("journal")) {
                 categories.journals.push(entry);
             } else if (keywords.includes("international")) {
                 categories.international.push(entry);
@@ -123,7 +116,7 @@
 </script>
 
 <svelte:head>
-    <title>Publications - Kotaro Hironaka</title>
+    <title>Publications - Hironaka Kotaro</title>
 </svelte:head>
 
 <!-- Journal Articles -->
@@ -237,41 +230,6 @@
         <h2>Workshop / Academic Presentations</h2>
         <ul class="item-list">
             {#each categorized.workshops as entry}
-                {@const pub = renderEntry(entry)}
-                <li>
-                    <span class="item-title">"{pub.title}"</span>
-                    <p class="item-content">
-                        {pub.author} ({pub.year}). <br />
-                        <em>{pub.venue}</em>.
-                        {#if pub.volume}Vol. {pub.volume},{/if}
-                        {#if pub.pages}pp. {pub.pages}.{/if}
-                        {#if pub.note}({pub.note}){/if}
-                        {#if pub.doi}
-                            <br /><a
-                                href="https://doi.org/{pub.doi}"
-                                target="_blank">DOI: {pub.doi}</a
-                            >
-                        {/if}
-                        {#if pub.url}
-                            <br /><a
-                                href={pub.url}
-                                target="_blank"
-                                rel="noopener noreferrer">{pub.url}</a
-                            >
-                        {/if}
-                    </p>
-                </li>
-            {/each}
-        </ul>
-    </section>
-{/if}
-
-<!-- Preprints / Under Review -->
-{#if categorized.preprints.length > 0}
-    <section id="preprints">
-        <h2>Preprints / Under Review</h2>
-        <ul class="item-list">
-            {#each categorized.preprints as entry}
                 {@const pub = renderEntry(entry)}
                 <li>
                     <span class="item-title">"{pub.title}"</span>
