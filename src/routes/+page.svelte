@@ -181,7 +181,7 @@
 </script>
 
 <svelte:head>
-    <title>Keisuke Onoue</title>
+    <title>Kotaro Hironaka</title>
 </svelte:head>
 
 <!-- Image Carousel -->
