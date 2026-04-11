@@ -77,20 +77,7 @@
     "domestic_conferences": "Load from references.bib",
     "academic_presentations": "Load from references.bib"
   },
-  "languages": [
-    {
-      "language": "Japanese",
-      "level": "Native"
-    },
-    {
-      "language": "English",
-      "level": "Fluent"
-    },
-    {
-      "language": "German",
-      "level": "Basic"
-    }
-  ],
+ 
   "links": {
     "email": "onoue[at]duck.com",
     "github": "https://github.com/k-onoue",
