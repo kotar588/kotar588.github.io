@@ -42,7 +42,7 @@
 </script>
 
 <svelte:head>
-    <title>News - Keisuke Onoue</title>
+    <title>News - Kotaro Hironaka</title>
 </svelte:head>
 
 <section id="news-all">
