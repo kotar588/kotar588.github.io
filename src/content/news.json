@@ -10,43 +10,8 @@
         "pinned": false
     },
     {
-        "date": "2026-01-25",
-        "content": "My research paper \"Closed-Form Coordinate Ascent Variational Inference for Student-t Process Regression with Student-t Likelihood\" is accepted to AISTATS 2026.",
-        "pinned": true
-    },
-    {
-        "date": "2026-01-15",
-        "content": "Returned from Munich.",
-        "pinned": false
-    },
-    {
-        "date": "2026-01-08",
-        "content": "Released torch-betainc v0.2.0 on PyPI - a fully-differentiable PyTorch implementation of the regularized incomplete beta function.",
-        "pinned": false
-    },
-    {
-        "date": "2025-12-22",
-        "content": "Released torch-betainc v0.1.0 on PyPI - a fully-differentiable PyTorch implementation of the regularized incomplete beta function.",
-        "pinned": false
-    },
-    {
-        "date": "2025-11-20",
-        "content": "Presented a poster at IBIS 2025 in Naha, Japan.",
-        "pinned": false
-    },
-    {
-        "date": "2025-07-15",
-        "content": "Started visiting researcher position at TU Munich.",
-        "pinned": false
-    },
-    {
         "date": "2024-04-01",
         "content": "Started Master's program at NAIST.",
         "pinned": false
     },
-    {
-        "date": "2023-09-01",
-        "content": "Started working as a research assistant at Kyoto University.",
-        "pinned": false
-    }
 ]
