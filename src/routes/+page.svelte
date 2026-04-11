@@ -279,22 +279,6 @@
         </div>
     </section>
 
-    <section id="languages" class="bento-languages">
-        <h2>Languages</h2>
-        <div id="languages-content">
-            {#if bioData.languages && bioData.languages.length > 0}
-                <ul class="languages-list">
-                    {#each bioData.languages as lang}
-                        <li>
-                            <span class="language-name">{lang.language}</span>
-                            <span class="language-level">({lang.level})</span>
-                        </li>
-                    {/each}
-                </ul>
-            {/if}
-        </div>
-    </section>
-
     <section id="links-section" class="bento-links">
         <h2>Links</h2>
         <div id="links-content" class="social-links">
