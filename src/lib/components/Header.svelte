@@ -92,7 +92,7 @@
     <div class="container">
         <nav>
             <div style="display: flex; align-items: center; gap: 15px;">
-                <a href="/" class="logo">Keisuke Onoue</a>
+                <a href="/" class="logo">Kotaro Hironaka</a>
                 <button
                     class="theme-toggle"
                     aria-label="Toggle dark mode"
