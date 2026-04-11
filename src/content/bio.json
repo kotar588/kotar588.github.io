@@ -71,7 +71,6 @@
     }
   ],
   "publications": {
-    "preprints_under_review": "Load from references.bib",
     "journal_articles": "Load from references.bib",
     "international_conferences": "Load from references.bib",
     "domestic_conferences": "Load from references.bib",
