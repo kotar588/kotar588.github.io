@@ -453,32 +453,6 @@ article li,
     line-height: 1.5;
 }
 
-/* Languages */
-.languages-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.languages-list li {
-    background-color: transparent;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: none;
-}
-
-.language-name {
-    font-weight: 600;
-    margin-right: 5px;
-}
-
-.language-level {
-    color: var(--text-color);
-    opacity: 0.8;
-}
 
 .social-links {
     display: flex;
