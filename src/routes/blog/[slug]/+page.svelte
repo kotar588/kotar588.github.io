@@ -12,7 +12,7 @@
 </script>
 
 <svelte:head>
-    <title>{data.title} - Keisuke Onoue</title>
+    <title>{data.title} - Kotaro Hironaka</title>
 </svelte:head>
 
 <article id="blog-post">
