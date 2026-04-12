@@ -1,73 +1,40 @@
 {
-  "about": "I am a top 1% Gaussian proccess tuner, finding something beyond normality.",
+  "about": "Hi! I'm Kotaro. My research explores how people adapt to unbounded environments.",
   "education": [
     {
       "institution": "Nara Institute of Science and Technology",
-      "degree": "PhD Student",
+      "degree": "Ph.D. Student in Information Science",
       "period": "2026--Present",
       "lab": "Mathematical Informatics Laboratory"
     },
     {
       "institution": "Nara Institute of Science and Technology",
-      "degree": "MEng in Information Science",
+      "degree": "M.Sc. in Information Science",
       "period": "2024--2026",
       "lab": "Mathematical Informatics Laboratory"
     },
     {
-      "institution": "Open University",
-      "degree": "BSc in Mathematics",
-      "period": "2020--2023"
+      "institution": "National Defense Academy",
+      "degree": "B.Sc. in Mathematics",
+      "period": "2019--2023",
+      "lab": "Theoretical Physics Laboratory"
     }
   ],
   "experience": [
     {
-      "role": "Research Participant",
-      "institution": "JST CREST: Unraveling Canine Supersensing Through Social Signals",
-      "period": "2025--2026"
+      "role": "Visiting Student Researcher",
+      "institution": "National Yang Ming Chiao Tung University, Taiwan",
+      "period": "Sep 2025--Nov 2025"
     },
     {
       "role": "Visiting Student Researcher",
-      "institution": "Chair of Information-oriented Control, Technical University of Munich",
-      "period": "2025--2026"
+      "institution": "University of the Philippines Diliman, Philippines",
+      "period": "Jan 2025--Mar 2025"
     },
     {
       "role": "Research Assistant",
       "institution": "Nara Institute of Science and Technology",
       "period": "2025--Present"
-    },
-    {
-      "role": "Research Assistant",
-      "institution": "Graduate School of Medicine, Kyoto University",
-      "period": "2023--Present"
-    },
-    {
-      "role": "Data Scientist (Intern / Part-time)",
-      "institution": "ScrumSign, Inc.",
-      "period": "2022--Present"
-    }
-  ],
-  "research_interests": [
-    {
-      "category": "Probabilistic ML",
-      "topics": [
-        "Approximate Bayesian inference",
-        "Bayesian Hierarchical Modeling",
-        "Gaussian Process"
-      ]
-    },
-    {
-      "category": "Optimization",
-      "topics": [
-        "Model-Based Black-Box Optimization",
-        "Constrained optimization"
-      ]
-    },
-    {
-      "category": "Trustworthy AI",
-      "topics": [
-        "Theoretical Guarantee on Algorithms (regret analysis on bandits)",
-        "Constraint Learning"
-      ]
     }
   ],
   "publications": {
@@ -76,11 +43,9 @@
     "domestic_conferences": "Load from references.bib",
     "academic_presentations": "Load from references.bib"
   },
- 
   "links": {
-    "email": "onoue[at]duck.com",
-    "github": "https://github.com/k-onoue",
-    "google_scholar": "https://scholar.google.com/citations?user=QQ4sWP4AAAAJ&hl=en",
-    "orcid": "https://orcid.org/0009-0007-3249-6572"
+    "email": "hironaka.kotaro.hi0[at]naist.ac.jp",
+    "google_scholar": "",
+    "orcid": "https://orcid.org/0009-0007-8894-0695"
   }
 }
