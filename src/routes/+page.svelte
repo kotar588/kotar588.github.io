@@ -261,24 +261,6 @@
         </section>
     {/if}
 
-    <section id="research-interests" class="bento-research">
-        <h2>Research Interests</h2>
-        <div id="research-content">
-            {#if bioData.research_interests && bioData.research_interests.length > 0}
-                {#each bioData.research_interests as interest}
-                    <div class="research-category">
-                        <h3>{interest.category}</h3>
-                        <ul>
-                            {#each interest.topics as topic}
-                                <li>{topic}</li>
-                            {/each}
-                        </ul>
-                    </div>
-                {/each}
-            {/if}
-        </div>
-    </section>
-
     <section id="links-section" class="bento-links">
         <h2>Links</h2>
         <div id="links-content" class="social-links">
