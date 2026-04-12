@@ -4,7 +4,7 @@ date: 2025-12-25
 summary: A student's life at Nara Institute of Science and Technology.
 tags: [culture, life]
 pinned: false
-published: true
+published: false
 ---
 
 # What is NAIST?
