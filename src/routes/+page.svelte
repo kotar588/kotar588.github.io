@@ -182,6 +182,10 @@
 
 <svelte:head>
     <title>Kotaro Hironaka</title>
+    <meta
+        name="description"
+        content="Personal website of Kotaro Hironaka"
+    />
 </svelte:head>
 
 <!-- Image Carousel -->
