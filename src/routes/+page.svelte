@@ -304,6 +304,16 @@
                     ><i class="fab fa-orcid"></i></a
                 >
             {/if}
+            {#if bioData.links.linkedin}
+                <a
+            href={bioData.links.linkedin}
+            target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    class="btn-icon"
+                    ><i class="fab fa-linkedin"></i></a
+                >
+            {/if}
         </div>
     </section>
 
