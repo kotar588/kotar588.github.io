@@ -230,7 +230,16 @@
     {#if bioData.about}
         <section id="about" class="bento-about">
             <h2>About</h2>
-            <p>{bioData.about}</p>
+            <div class="about-content">
+                {#if bioData.profileImage}
+                    <img
+                        src={bioData.profileImage}
+                        alt={bioData.profileImageAlt || "Profile photo"}
+                        class="about-profile-image"
+                    />
+                {/if}
+                <p>{bioData.about}</p>
+            </div>
         </section>
     {/if}
 
