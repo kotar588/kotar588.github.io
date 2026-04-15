@@ -1,5 +1,7 @@
 {
   "about": "Hi! I'm Kotaro. My research explores how people adapt to unbounded environments.",
+  "profileImage": "/profile.png",
+  "profileImageAlt": "Portrait of Kotaro Hironaka",
   "education": [
     {
       "institution": "Nara Institute of Science and Technology",
@@ -45,7 +47,7 @@
   },
   "links": {
     "email": "hironaka.kotaro.hi0[at]naist.ac.jp",
-    "google_scholar": "",
+    "google_scholar": "https://scholar.google.co.jp/citations?hl=ja&user=boE2pGgAAAAJ",
     "orcid": "https://orcid.org/0009-0007-8894-0695",
     "linkedin": "https://www.linkedin.com/in/kotaro-hironaka-928ab3326"
   }
