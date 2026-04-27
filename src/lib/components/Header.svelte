@@ -25,30 +25,12 @@
         "Dec",
     ];
 
-    // function updateClock() {
-    //     // UTC-12: subtract 12 hours from UTC
-    //     const now = new Date();
-    //     const utc12 = new Date(now.getTime() - 12 * 60 * 60 * 1000);
-    //     const yy = String(utc12.getUTCFullYear()).slice(-2);
-    //     const mm = String(utc12.getUTCMonth() + 1).padStart(2, "0");
-    //     const dd = String(utc12.getUTCDate()).padStart(2, "0");
-    //     const hh = String(utc12.getUTCHours()).padStart(2, "0");
-    //     const min = String(utc12.getUTCMinutes()).padStart(2, "0");
-    //     const ss = String(utc12.getUTCSeconds()).padStart(2, "0");
-    //     const day = DAYS[utc12.getUTCDay()];
-    //     clockText = `${yy}/${mm}/${dd} ${hh}:${min}:${ss} (${day})`;
-    // }
-
     function updateClock() {
         // UTC-12: subtract 12 hours from UTC
         const now = new Date();
         const utc12 = new Date(now.getTime() - 12 * 60 * 60 * 1000);
 
-        // if dd is below 10, remove 0
-        // add th
-        // const dd = String(utc12.getUTCDate()).padStart(2, "0");
         const dd = String(utc12.getUTCDate());
-
         const hh = String(utc12.getUTCHours()).padStart(2, "0");
         const min = String(utc12.getUTCMinutes()).padStart(2, "0");
         const day = DAYS[utc12.getUTCDay()];
@@ -59,55 +41,52 @@
     }
 
     function getThemeForCurrentTime(date = new Date()) {
-    const hour = date.getHours();
-    return hour >= 6 && hour < 18 ? "light" : "dark";
-}
+        const hour = date.getHours();
+        return hour >= 6 && hour < 18 ? "light" : "dark";
+    }
 
-function applyTheme(theme) {
-    isDarkMode = theme === "dark";
-    document.documentElement.setAttribute("data-theme", theme);
-}
+    function applyTheme(theme) {
+        isDarkMode = theme === "dark";
+        document.documentElement.setAttribute("data-theme", theme);
+    }
 
-function updateThemeByTime() {
-    applyTheme(getThemeForCurrentTime());
-}
+    function updateThemeByTime() {
+        applyTheme(getThemeForCurrentTime());
+    }
 
-function toggleTheme() {
-    const nextTheme = isDarkMode ? "light" : "dark";
-    applyTheme(nextTheme);
-    sessionStorage.setItem("manualTheme", nextTheme);
-}
+    function toggleTheme() {
+        const nextTheme = isDarkMode ? "light" : "dark";
+        applyTheme(nextTheme);
+        sessionStorage.setItem("manualTheme", nextTheme);
+    }
+
+    function toggleMenu() {
+        isMenuOpen = !isMenuOpen;
+    }
 
     function closeMenu() {
         isMenuOpen = false;
     }
 
-    function toggleTheme() {
-        isDarkMode = !isDarkMode;
-        const theme = isDarkMode ? "dark" : "light";
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-    }
-
     onMount(() => {
-    const manualTheme = sessionStorage.getItem("manualTheme");
+        const manualTheme = sessionStorage.getItem("manualTheme");
 
-    if (manualTheme) {
-        applyTheme(manualTheme);
-    } else {
-        updateThemeByTime();
-    }
-
-    updateClock();
-    clockInterval = setInterval(() => {
-        updateClock();
-
-        const currentManualTheme = sessionStorage.getItem("manualTheme");
-        if (!currentManualTheme) {
+        if (manualTheme) {
+            applyTheme(manualTheme);
+        } else {
             updateThemeByTime();
         }
-    }, 1000);
-});
+
+        updateClock();
+        clockInterval = setInterval(() => {
+            updateClock();
+
+            const currentManualTheme = sessionStorage.getItem("manualTheme");
+            if (!currentManualTheme) {
+                updateThemeByTime();
+            }
+        }, 1000);
+    });
 
     onDestroy(() => {
         if (clockInterval) clearInterval(clockInterval);
@@ -130,11 +109,12 @@ function toggleTheme() {
                         <i class="fas fa-moon"></i>
                     {/if}
                 </button>
-                <span class="header-clock"
-                    ><span class="clock-date">{clockDate}</span>
-                    <span class="clock-time">{clockTime}</span></span
-                >
+                <span class="header-clock">
+                    <span class="clock-date">{clockDate}</span>
+                    <span class="clock-time">{clockTime}</span>
+                </span>
             </div>
+
             <button
                 class="hamburger"
                 aria-label="Toggle navigation"
@@ -142,11 +122,13 @@ function toggleTheme() {
             >
                 <i class="fas fa-hamburger"></i>
             </button>
+
             {#if isMenuOpen}
                 <!-- svelte-ignore a11y-click-events-have-key-events -->
                 <!-- svelte-ignore a11y-no-static-element-interactions -->
                 <div class="menu-overlay" on:click={closeMenu}></div>
             {/if}
+
             <ul class="nav-links" class:active={isMenuOpen}>
                 <li>
                     <a
@@ -172,9 +154,7 @@ function toggleTheme() {
                 <li>
                     <a
                         href="/publications"
-                        class:active={$page.url.pathname.startsWith(
-                            "/publications",
-                        )}
+                        class:active={$page.url.pathname.startsWith("/publications")}
                         on:click={closeMenu}>Publications</a
                     >
                 </li>
