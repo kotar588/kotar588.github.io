@@ -58,9 +58,25 @@
         clockTime = `${hh}:${min}`;
     }
 
-    function toggleMenu() {
-        isMenuOpen = !isMenuOpen;
-    }
+    function getThemeForCurrentTime(date = new Date()) {
+    const hour = date.getHours();
+    return hour >= 6 && hour < 18 ? "light" : "dark";
+}
+
+function applyTheme(theme) {
+    isDarkMode = theme === "dark";
+    document.documentElement.setAttribute("data-theme", theme);
+}
+
+function updateThemeByTime() {
+    applyTheme(getThemeForCurrentTime());
+}
+
+function toggleTheme() {
+    const nextTheme = isDarkMode ? "light" : "dark";
+    applyTheme(nextTheme);
+    sessionStorage.setItem("manualTheme", nextTheme);
+}
 
     function closeMenu() {
         isMenuOpen = false;
@@ -74,14 +90,24 @@
     }
 
     onMount(() => {
-        // Check for saved theme preference or default to light mode
-        const savedTheme = localStorage.getItem("theme") || "light";
-        isDarkMode = savedTheme === "dark";
-        document.documentElement.setAttribute("data-theme", savedTheme);
+    const manualTheme = sessionStorage.getItem("manualTheme");
 
+    if (manualTheme) {
+        applyTheme(manualTheme);
+    } else {
+        updateThemeByTime();
+    }
+
+    updateClock();
+    clockInterval = setInterval(() => {
         updateClock();
-        clockInterval = setInterval(updateClock, 1000);
-    });
+
+        const currentManualTheme = sessionStorage.getItem("manualTheme");
+        if (!currentManualTheme) {
+            updateThemeByTime();
+        }
+    }, 1000);
+});
 
     onDestroy(() => {
         if (clockInterval) clearInterval(clockInterval);
